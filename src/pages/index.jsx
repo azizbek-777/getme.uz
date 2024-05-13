@@ -10,6 +10,7 @@ import {
   InstagramIcon,
   GitHubIcon,
   LinkedInIcon,
+  TelegramIcon,
 } from '@/components/SocialIcons'
 import image1 from '@/images/photos/image-1.jpg'
 import image2 from '@/images/photos/image-2.jpg'
@@ -22,6 +23,7 @@ import logoKarsoft from '@/images/logos/logo_karsoft.jpg'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { formatDate } from '@/lib/formatDate'
+import { SOCIALLINKS } from '@/constants/socials'
 
 function MailIcon(props) {
   return (
@@ -207,7 +209,11 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button
+        href="./CV_Azizbek.pdf"
+        variant="secondary"
+        className="group mt-6 w-full"
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -266,20 +272,25 @@ export default function Home({ articles }) {
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
-              href="https://www.linkedin.com/in/undefined-uz/"
+              href={SOCIALLINKS.linkedin}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
             <SocialLink
-              href="https://github.com/undefineduz"
+              href={SOCIALLINKS.github}
               aria-label="Follow on GitHub"
               icon={GitHubIcon}
             />
             <SocialLink
-              href="https://www.instagram.com/dev_azizbek/"
+              href={SOCIALLINKS.instagram}
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
             />
+            {/* <SocialLink
+              href={SOCIALLINKS.telegram}
+              aria-label="Follow on Telegram"
+              icon={TelegramIcon}
+            /> */}
           </div>
         </div>
       </Container>
