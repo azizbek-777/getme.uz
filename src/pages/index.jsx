@@ -12,11 +12,11 @@ import {
   LinkedInIcon,
   TelegramIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import image1 from '@/images/1.jpg'
+import image2 from '@/images/2.jpg'
+import image3 from '@/images/3.jpg'
+import image4 from '@/images/4.jpg'
+import image5 from '@/images/5.jpg'
 import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
 import logoUzinfocom from '@/images/logos/logo_uzinfocom.jpg'
 import logoKarsoft from '@/images/logos/logo_karsoft.jpg'
