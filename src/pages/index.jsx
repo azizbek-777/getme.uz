@@ -13,11 +13,6 @@ import {
   LinkedInIcon,
   TelegramIcon,
 } from '@/components/SocialIcons'
-import image1 from '@/images/1.jpg'
-import image2 from '@/images/2.jpg'
-import image3 from '@/images/3.jpg'
-import image4 from '@/images/4.jpg'
-import image5 from '@/images/5.jpg'
 import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
 import logoUzinfocom from '@/images/logos/logo_uzinfocom.jpg'
 import logoKarsoft from '@/images/logos/logo_karsoft.jpg'
@@ -163,7 +158,7 @@ function Resume() {
       title: 'Backend Developer',
       link: 'https://texnopos.uz',
       logo: logoTexnopos,
-      start: '2021',  
+      start: '2021',
       end: '2022',
     },
   ]
@@ -188,7 +183,7 @@ function Resume() {
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                <a href={role.link} target="_blank">{role.company}</a>
+              <Link href={role.link} target="_blank">{role.company}</Link>
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -197,9 +192,8 @@ function Resume() {
               <dt className="sr-only">Date</dt>
               <dd
                 className="ml-auto text-xs text-zinc-400 dark:text-zinc-500"
-                aria-label={`${role.start.label ?? role.start} until ${
-                  role.end.label ?? role.end
-                }`}
+                aria-label={`${role.start.label ?? role.start} until ${role.end.label ?? role.end
+                  }`}
               >
                 <time dateTime={role.start.dateTime ?? role.start}>
                   {role.start.label ?? role.start}

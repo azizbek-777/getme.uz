@@ -50,7 +50,7 @@ export default function Uses() {
           </ToolsSection>
           <ToolsSection title="Development tools">
             <Tool title="VS Code">
-              Simple, powerful, and highly extensible, it's my coding Swiss Army
+              Simple, powerful, and highly extensible, it&apos;s my coding Swiss Army
               knife.
             </Tool>
             <Tool title="Docker">
