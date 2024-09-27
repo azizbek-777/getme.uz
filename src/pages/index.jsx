@@ -141,7 +141,8 @@ function Resume() {
   let resume = [
     {
       company: 'UZINFOCOM',
-      title: 'Software Engineer',
+      title: 'Backend Developer',
+      link: 'https://uzinfocom.uz',
       logo: logoUzinfocom,
       start: '2023',
       end: {
@@ -152,6 +153,7 @@ function Resume() {
     {
       company: 'KarSOFT',
       title: 'Software Engineer',
+      link: 'https://karsoft.uz',
       logo: logoKarsoft,
       start: '2022',
       end: '2023',
@@ -159,8 +161,9 @@ function Resume() {
     {
       company: 'TexnoPOS',
       title: 'Backend Developer',
+      link: 'https://texnopos.uz',
       logo: logoTexnopos,
-      start: '2021',
+      start: '2021',  
       end: '2022',
     },
   ]
@@ -185,7 +188,7 @@ function Resume() {
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
               <dd className="w-full flex-none text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                {role.company}
+                <a href={role.link} target="_blank">{role.company}</a>
               </dd>
               <dt className="sr-only">Role</dt>
               <dd className="text-xs text-zinc-500 dark:text-zinc-400">
@@ -222,52 +225,52 @@ function Resume() {
   )
 }
 
-function Photos() {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const images = [image1, image2, image3, image4, image5]
+// function Photos() {
+//   const [currentIndex, setCurrentIndex] = useState(0)
+//   const images = [image1, image2, image3, image4, image5]
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 4 ? 0 : prevIndex + 1
-    )
-  }
+//   const nextSlide = () => {
+//     setCurrentIndex((prevIndex) =>
+//       prevIndex === images.length - 4 ? 0 : prevIndex + 1
+//     )
+//   }
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide()
-    }, 5000)
-    return () => clearInterval(interval)
-  }, [currentIndex])
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       nextSlide()
+//     }, 5000)
+//     return () => clearInterval(interval)
+//   }, [currentIndex])
 
-  return (
-    <div className="mt-10 flex gap-2">
-      <Image
-        loading="lazy"
-        src={images[currentIndex]}
-        alt="Slide"
-        className="h-41 shadow-mx mx-auto w-60 rounded-lg"
-      />
-      <Image
-        loading="lazy"
-        src={images[(currentIndex + 1) % images.length]}
-        alt="Slide"
-        className="h-41 mx-auto w-60 rounded-lg shadow-md"
-      />
-      <Image
-        loading="lazy"
-        src={images[(currentIndex + 2) % images.length]}
-        alt="Slide"
-        className="h-41 mx-auto w-60 rounded-lg shadow-md"
-      />
-      <Image
-        loading="lazy"
-        src={images[(currentIndex + 3) % images.length]}
-        alt="Slide"
-        className="h-41 mx-auto w-60 rounded-lg shadow-md"
-      />
-    </div>
-  )
-}
+//   return (
+//     <div className="mt-10 flex gap-2">
+//       <Image
+//         loading="lazy"
+//         src={images[currentIndex]}
+//         alt="Slide"
+//         className="h-41 shadow-mx mx-auto w-60 rounded-lg"
+//       />
+//       <Image
+//         loading="lazy"
+//         src={images[(currentIndex + 1) % images.length]}
+//         alt="Slide"
+//         className="h-41 mx-auto w-60 rounded-lg shadow-md"
+//       />
+//       <Image
+//         loading="lazy"
+//         src={images[(currentIndex + 2) % images.length]}
+//         alt="Slide"
+//         className="h-41 mx-auto w-60 rounded-lg shadow-md"
+//       />
+//       <Image
+//         loading="lazy"
+//         src={images[(currentIndex + 3) % images.length]}
+//         alt="Slide"
+//         className="h-41 mx-auto w-60 rounded-lg shadow-md"
+//       />
+//     </div>
+//   )
+// }
 
 export default function Home({ articles }) {
   return (
@@ -314,7 +317,7 @@ export default function Home({ articles }) {
             /> */}
           </div>
         </div>
-        <Photos />
+        {/* <Photos /> */}
       </Container>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
