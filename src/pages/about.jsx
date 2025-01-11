@@ -4,14 +4,9 @@ import Link from 'next/link'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import {
-  TwitterIcon,
-  InstagramIcon,
-  GitHubIcon,
-  LinkedInIcon,
-} from '@/components/SocialIcons'
 import portraitImage from '@/images/portrait.jpg'
 import { SOCIALLINKS } from '@/constants/socials'
+import { IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandLinkedinFilled, IconBrandTelegram } from '@tabler/icons-react'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -96,25 +91,36 @@ export default function About() {
           <div className="lg:pl-20">
             <ul role="list">
               <SocialLink
-                href={SOCIALLINKS.instagram}
-                icon={InstagramIcon}
+                href={SOCIALLINKS.linkedin}
+                aria-label="Follow on LinkedIn"
+                icon={IconBrandLinkedinFilled}
                 className="mt-4"
               >
-                Follow on Instagram
+                Follow on LinkedIn
               </SocialLink>
               <SocialLink
                 href={SOCIALLINKS.github}
-                icon={GitHubIcon}
+                aria-label="Follow on GitHub"
+                icon={IconBrandGithubFilled}
                 className="mt-4"
               >
                 Follow on GitHub
               </SocialLink>
               <SocialLink
-                href={SOCIALLINKS.linkedin}
-                icon={LinkedInIcon}
+                href={SOCIALLINKS.instagram}
+                aria-label="Follow on Instagram"
                 className="mt-4"
+                icon={IconBrandInstagramFilled}
               >
-                Follow on LinkedIn
+                Follow on Instagram
+              </SocialLink>
+              <SocialLink
+                href={SOCIALLINKS.telegram}
+                aria-label="Follow on Telegram"
+                className="mt-4"
+                icon={IconBrandTelegram}
+              >
+                Follow on Telegram
               </SocialLink>
               <SocialLink
                 href="mailto:contact@getme.uz"
