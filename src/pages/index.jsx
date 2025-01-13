@@ -19,7 +19,7 @@ import { SOCIALLINKS } from '@/constants/socials'
 function Jobs({ title = 'Experience', data }) {
   return (
     <>
-      <h2 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl">
+      <h2 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mt-10">
         {title}
       </h2>
 
@@ -169,13 +169,13 @@ export default function Home({ articles }) {
         <Button
           href="./CV_Azizbek.pdf"
           variant="secondary"
-          className="group w-36 mt-4"
+          className="group w-36 mt-4 border dark:border-zinc-900"
         >
           Download CV
           <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
         </Button>
       </Container >
-      <Container className="mt-12">
+      <Container>
         <Jobs title='Education' data={dataEducation} />
         <Jobs title='Work Experience' data={data} />
       </Container>
