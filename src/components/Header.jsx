@@ -366,10 +366,11 @@ export function Header() {
               <div className="flex flex-1">
                 <Avatar />
               </div>
-              <div className="flex flex-1 justify-end md:justify-center">
+              <div className="flex justify-center w-full">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
+
               <div className="flex justify-end md:flex-1">
                 <div className="pointer-events-auto">
                   <ModeToggle />
