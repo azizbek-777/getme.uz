@@ -39,6 +39,7 @@ export default function Document() {
   return (
     <Html className="h-full antialiased" lang="en">
       <Head>
+        <link rel="shortcut icon" href="" />
         <script dangerouslySetInnerHTML={{ __html: modeScript }} />
         <link
           rel="alternate"
