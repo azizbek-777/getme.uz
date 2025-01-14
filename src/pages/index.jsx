@@ -14,56 +14,6 @@ import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
 import { SOCIALLINKS } from '@/constants/socials'
 
-function Jobs({ title = 'Experience', data }) {
-  return (
-    <>
-      <h2 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mt-10">
-        {title}
-      </h2>
-
-      {/* Job Cards */}
-      <div className="space-y-6 mt-4">
-        {data.map((job, index) => (
-          <div
-            key={index}
-            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0
-              transition-transform duration-300 hover:scale-105 focus:scale-105 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-600 dark:focus:ring-zinc-600"
-            tabIndex={0} // Klaviatura fokusi uchun
-          >
-            {/* Logo Section */}
-            <div
-              className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-            >
-              <Image
-                src={job.logo}
-                alt={`${job.name} logo`}
-                className="h-12 w-12 rounded-full"
-                unoptimized
-              />
-            </div>
-
-            {/* Details Section */}
-            <div>
-              <h3 className="text-lg dark:text-zinc-100 font-semibold">
-                {job.name}{' '}
-                <span className="text-sm text-zinc-700 dark:text-zinc-400">
-                  {job.date}
-                </span>
-              </h3>
-              <p className="text-sm text-zinc-700 dark:text-zinc-400">{job.position}</p>
-              <p className="text-sm dark:text-zinc-200 mt-2">{job.description}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-    </>
-  );
-}
-
-
-
-
-
 function SocialLink({ icon: Icon, isTelegram, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
@@ -90,34 +40,6 @@ function IM() {
 }
 
 export default function Home({ articles }) {
-
-  const data = [
-    {
-      name: 'UZINFOCOM',
-      logo: logoUzinfocom,
-      position: 'Backend Developer',
-      date: 'May 01, 2023 - Present',
-      description: 'I work as a backend developer at UZINFOCOM. My focus is on developing and maintaining efficient backend systems for various projects. I contribute to optimizing the company\'s technological processes through modern technologies and innovative solutions.',
-    },
-    {
-      name: 'TEXNOPOS',
-      logo: logoTexnopos,
-      position: 'Backend Developer',
-      date: 'Jan 10, 2020 - Aug 20, 2022',
-      description: 'At UzCard, I was responsible for creating and maintaining backend APIs for payment processing. I also optimized database queries and implemented security measures for the system.',
-    },
-  ];
-
-  const dataEducation = [
-    {
-      name: 'Karakalpak State University',
-      logo: logoKarsu,
-      position: 'Student',
-      date: 'Sep 01, 2021 - Jun 20, 2025',
-      description: 'Studied in the Computer Science and Software Engineering program, gaining knowledge in C#, Python, and Java. Participated in practical projects focused on artificial intelligence and programming.',
-    },
-  ];
-
 
   return (
     <>
