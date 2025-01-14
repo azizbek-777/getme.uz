@@ -48,7 +48,7 @@ export default function About() {
                 src={portraitImage}
                 alt=""
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="aspect-square rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
             </div>
           </div>
@@ -58,30 +58,13 @@ export default function About() {
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-              Hi! I'm Azizbek, and I'm currently working as a Developer at UZINFOCOM.uz.
+                I am Azizbek, a programmer who is constantly working on himself to achieve his goals. My passion for programming inspires me to seek new opportunities and constantly grow.
               </p>
               <p>
-                {/* <p className="m-0 p-0 text-4xl font-bold dark:text-zinc-100 sm:text-2xl">
-                  About me
-                </p> */}
-                The only thing I loved more than computers as a kid was space.
-                When I was 8, I climbed the 40-foot oak tree at the back of our
-                yard while wearing my older sister’s motorcycle helmet, counted
-                down from three, and jumped — hoping the tree was tall enough
-                that with just a bit of momentum I’d be able to get to orbit.
+                I am a proponent of learning everything step by step and appreciating every success. As I learn programming, I strive to create new projects and inspire other programmers.
               </p>
               <p>
-                I spent the next few summers indoors working on a rocket design,
-                while I recovered from the multiple surgeries it took to fix my
-                badly broken legs. It took nine iterations, but when I was 15 I
-                sent my dad’s Blackberry into orbit and was able to transmit a
-                photo back down to our family computer from space.
-              </p>
-              <p>
-                Today, I’m the founder of Planetaria, where we’re working on
-                civilian space suits and manned shuttle kits you can assemble at
-                home so that the next generation of kids really <em>can</em>{' '}
-                make it to orbit — from the comfort of their own backyards.
+                Besides studying technology and developing software solutions, I am interested in sports and love to read. I am always open to new experiences!
               </p>
             </div>
           </div>
