@@ -26,7 +26,9 @@ function Jobs({ title = 'Experience', data }) {
         {data.map((job, index) => (
           <div
             key={index}
-            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0
+              transition-transform duration-300 hover:scale-105 focus:scale-105 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-600 dark:focus:ring-zinc-600"
+            tabIndex={0} // Klaviatura fokusi uchun
           >
             {/* Logo Section */}
             <div
@@ -43,7 +45,10 @@ function Jobs({ title = 'Experience', data }) {
             {/* Details Section */}
             <div>
               <h3 className="text-lg dark:text-zinc-100 font-semibold">
-                {job.name} <span className="text-sm text-zinc-700 dark:text-zinc-400">{job.date}</span>
+                {job.name}{' '}
+                <span className="text-sm text-zinc-700 dark:text-zinc-400">
+                  {job.date}
+                </span>
               </h3>
               <p className="text-sm text-zinc-700 dark:text-zinc-400">{job.position}</p>
               <p className="text-sm dark:text-zinc-200 mt-2">{job.description}</p>
@@ -55,18 +60,8 @@ function Jobs({ title = 'Experience', data }) {
   );
 }
 
-function ArrowDownIcon(props) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  )
-}
+
+
 
 
 function SocialLink({ icon: Icon, isTelegram, ...props }) {
@@ -135,7 +130,7 @@ export default function Home({ articles }) {
           become a very strong programmer."
         />
       </Head>
-      <Container className="mt-9">
+      <Container className="mt-[10vh]">
         <div className="max-w-2xl">
           <IM></IM>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
@@ -143,47 +138,36 @@ export default function Home({ articles }) {
             implement useful projects for the people and the company and to
             become a very strong programmer.
           </p>
-          <div className=' flex justify-between' >
-            <div className="mt-6 flex gap-5">
-              <SocialLink
-                href={SOCIALLINKS.linkedin}
-                aria-label="Follow on LinkedIn"
-                icon={IconBrandLinkedinFilled}
-              />
-              <SocialLink
-                href={SOCIALLINKS.github}
-                aria-label="Follow on GitHub"
-                icon={IconBrandGithubFilled}
-              />
-              <SocialLink
-                href={SOCIALLINKS.instagram}
-                aria-label="Follow on Instagram"
-                icon={IconBrandInstagramFilled}
-              />
-              <SocialLink
-                href={SOCIALLINKS.telegram}
-                aria-label="Follow on Telegram"
-                icon={IconBrandTelegram}
-                isTelegram
-              />
-            </div>
-            <Button
-              href="./CV_Azizbek.pdf"
-              variant="secondary"
-              className="group w-36 mt-4 border dark:border-zinc-900"
-            >
-              Download CV
-              <ArrowDownIcon
-                className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 ew:group-active:stroke-zinc-50" />
-            </Button>
+          <div className="mt-6 flex gap-5">
+            <SocialLink
+              href={SOCIALLINKS.linkedin}
+              aria-label="Follow on LinkedIn"
+              icon={IconBrandLinkedinFilled}
+            />
+            <SocialLink
+              href={SOCIALLINKS.github}
+              aria-label="Follow on GitHub"
+              icon={IconBrandGithubFilled}
+            />
+            <SocialLink
+              href={SOCIALLINKS.instagram}
+              aria-label="Follow on Instagram"
+              icon={IconBrandInstagramFilled}
+            />
+            <SocialLink
+              href={SOCIALLINKS.telegram}
+              aria-label="Follow on Telegram"
+              icon={IconBrandTelegram}
+              isTelegram
+            />
           </div>
         </div>
         {/* Download CV Button */}
       </Container >
-      <Container>
+      {/* <Container>
         <Jobs title='Education' data={dataEducation} />
         <Jobs title='Work Experience' data={data} />
-      </Container>
+      </Container> */}
     </>
   )
 }
