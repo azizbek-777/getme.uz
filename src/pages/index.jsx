@@ -69,10 +69,13 @@ function ArrowDownIcon(props) {
 }
 
 
-function SocialLink({ icon: Icon, ...props }) {
+function SocialLink({ icon: Icon, isTelegram, ...props }) {
   return (
     <Link className="group -m-1 p-1" {...props}>
-      <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      {isTelegram
+        ? <Icon stroke={0.3} className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+        : <Icon stroke={1} className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
+      }
     </Link>
   )
 }
@@ -140,38 +143,41 @@ export default function Home({ articles }) {
             implement useful projects for the people and the company and to
             become a very strong programmer.
           </p>
-          <div className="mt-6 flex gap-6">
-            <SocialLink
-              href={SOCIALLINKS.linkedin}
-              aria-label="Follow on LinkedIn"
-              icon={IconBrandLinkedinFilled}
-            />
-            <SocialLink
-              href={SOCIALLINKS.github}
-              aria-label="Follow on GitHub"
-              icon={IconBrandGithubFilled}
-            />
-            <SocialLink
-              href={SOCIALLINKS.instagram}
-              aria-label="Follow on Instagram"
-              icon={IconBrandInstagramFilled}
-            />
-            <SocialLink
-              href={SOCIALLINKS.telegram}
-              aria-label="Follow on Telegram"
-              icon={IconBrandTelegram}
-            />
+          <div className=' flex justify-between' >
+            <div className="mt-6 flex gap-5">
+              <SocialLink
+                href={SOCIALLINKS.linkedin}
+                aria-label="Follow on LinkedIn"
+                icon={IconBrandLinkedinFilled}
+              />
+              <SocialLink
+                href={SOCIALLINKS.github}
+                aria-label="Follow on GitHub"
+                icon={IconBrandGithubFilled}
+              />
+              <SocialLink
+                href={SOCIALLINKS.instagram}
+                aria-label="Follow on Instagram"
+                icon={IconBrandInstagramFilled}
+              />
+              <SocialLink
+                href={SOCIALLINKS.telegram}
+                aria-label="Follow on Telegram"
+                icon={IconBrandTelegram}
+                isTelegram
+              />
+            </div>
+            <Button
+              href="./CV_Azizbek.pdf"
+              variant="secondary"
+              className="group w-36 mt-4 border dark:border-zinc-900"
+            >
+              Download CV
+              <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+            </Button>
           </div>
         </div>
         {/* Download CV Button */}
-        <Button
-          href="./CV_Azizbek.pdf"
-          variant="secondary"
-          className="group w-36 mt-4 border dark:border-zinc-900"
-        >
-          Download CV
-          <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
-        </Button>
       </Container >
       <Container>
         <Jobs title='Education' data={dataEducation} />
