@@ -6,14 +6,12 @@ import { Typewriter } from 'react-simple-typewriter'
 import { IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandLinkedinFilled, IconBrandTelegram, } from '@tabler/icons-react'
 
 import { Button } from '@/components/Button'
-import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
 import logoUzinfocom from '@/images/logos/logo_uzinfocom.jpg'
 import logoKarsu from '@/images/logos/logo_karsu.png'
 import { generateRssFeed } from '@/lib/generateRssFeed'
 import { getAllArticles } from '@/lib/getAllArticles'
-import { formatDate } from '@/lib/formatDate'
 import { SOCIALLINKS } from '@/constants/socials'
 
 function Jobs({ title = 'Experience', data }) {
@@ -83,10 +81,10 @@ function IM() {
   return (
     <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl w-full h-10">
       <Typewriter
-        words={["I'm Azizbek", "I'm a Software Engineer", "I build web applications", "I solve problems with code"]}
+        words={["I'm a Software Engineer", "I build web applications", "I solve problems with code"]}
         typeSpeed={50}
         backSpeed={30}
-
+        cursor={true}
         loop
       />
     </h2>
@@ -138,7 +136,7 @@ export default function Home({ articles }) {
         <div className="max-w-2xl">
           <IM></IM>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m Azizbek, I am currently working as a programmer, my goal is to
+            I’m Azizbek, I’m currently working as a programmer, my goal is to
             implement useful projects for the people and the company and to
             become a very strong programmer.
           </p>
