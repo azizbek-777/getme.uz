@@ -37,7 +37,7 @@ export default function About() {
   return (
     <>
       <Head>
-        <title>About - Azizbek</title>
+        <title>About</title>
         <meta name="description" content="I’m Azizbek. I live in Nukus" />
       </Head>
       <Container className="mt-16 sm:mt-32">
@@ -54,14 +54,11 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              About me
+              I'm Azizbek
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I’ve loved making things for as long as I can remember, and
-                wrote my first program when I was 6 years old, just two weeks
-                after my mom brought home the brand new Macintosh LC 550 that I
-                taught myself to type on.
+              Hi! I'm Azizbek, and I'm currently working as a Developer at UZINFOCOM.uz.
               </p>
               <p>
                 {/* <p className="m-0 p-0 text-4xl font-bold dark:text-zinc-100 sm:text-2xl">
@@ -89,47 +86,13 @@ export default function About() {
             </div>
           </div>
           <div className="lg:pl-20">
-            <ul role="list">
-              <SocialLink
-                href={SOCIALLINKS.linkedin}
-                aria-label="Follow on LinkedIn"
-                icon={IconBrandLinkedinFilled}
-                className="mt-4"
-              >
-                Follow on LinkedIn
-              </SocialLink>
-              <SocialLink
-                href={SOCIALLINKS.github}
-                aria-label="Follow on GitHub"
-                icon={IconBrandGithubFilled}
-                className="mt-4"
-              >
-                Follow on GitHub
-              </SocialLink>
-              <SocialLink
-                href={SOCIALLINKS.instagram}
-                aria-label="Follow on Instagram"
-                className="mt-4"
-                icon={IconBrandInstagramFilled}
-              >
-                Follow on Instagram
-              </SocialLink>
-              <SocialLink
-                href={SOCIALLINKS.telegram}
-                aria-label="Follow on Telegram"
-                className="mt-4"
-                icon={IconBrandTelegram}
-              >
-                Follow on Telegram
-              </SocialLink>
-              <SocialLink
-                href="mailto:contact@getme.uz"
-                icon={MailIcon}
-                className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-              >
-                contact@getme.uz
-              </SocialLink>
-            </ul>
+            <SocialLink
+              href="mailto:contact@getme.uz"
+              icon={MailIcon}
+              className="mt-8 border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
+            >
+              contact@getme.uz
+            </SocialLink>
           </div>
         </div>
       </Container>
