@@ -173,7 +173,8 @@ export default function Home({ articles }) {
               className="group w-36 mt-4 border dark:border-zinc-900"
             >
               Download CV
-              <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+              <ArrowDownIcon
+                className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 ew:group-active:stroke-zinc-50" />
             </Button>
           </div>
         </div>

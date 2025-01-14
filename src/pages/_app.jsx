@@ -20,13 +20,12 @@ export default function App({ Component, pageProps, router }) {
 
   return (
     <>
-      <div className="relative">
-        <Header />
-        <main>
-          <Component previousPathname={previousPathname} {...pageProps} />
-        </main>
-        <Footer />
-      </div>
+      <Header />
+      <main className="mx-auto max-w-4xl">
+        <Component previousPathname={previousPathname} {...pageProps} />
+      </main>
+
+      <Footer />
     </>
   )
 }

@@ -20,11 +20,12 @@ const InnerContainer = forwardRef(function InnerContainer(
   return (
     <div
       ref={ref}
-      className={clsx('relative px-8 sm:px-8 lg:px-12', className)}
+      className={clsx('relative px-8 sm:px-8 lg:px-12', className)} // "flex" qo'shildi
       {...props}
     >
-      <div className="mx-auto max-w-2xl lg:max-w-2xl">{children}</div>
+      <div className="mx-auto max-w-xl lg:max-w-4xl">{children}</div>
     </div>
+
   )
 })
 
