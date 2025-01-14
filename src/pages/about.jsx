@@ -5,8 +5,6 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import portraitImage from '@/images/portrait.jpg'
-import { SOCIALLINKS } from '@/constants/socials'
-import { IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandLinkedinFilled, IconBrandTelegram } from '@tabler/icons-react'
 
 function SocialLink({ className, href, children, icon: Icon }) {
   return (
@@ -54,11 +52,11 @@ export default function About() {
           </div>
           <div className="lg:order-first lg:row-span-2">
             <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-              I'm Azizbek
+              I&apos;m Azizbek
             </h1>
             <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
               <p>
-                I am Azizbek, a programmer who is constantly working on himself to achieve his goals. My passion for programming inspires me to seek new opportunities and constantly grow.
+                I&apos;m Azizbek, a programmer who is constantly working on himself to achieve his goals. My passion for programming inspires me to seek new opportunities and constantly grow.
               </p>
               <p>
                 I am a proponent of learning everything step by step and appreciating every success. As I learn programming, I strive to create new projects and inspire other programmers.
