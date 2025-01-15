@@ -27,7 +27,7 @@ function SocialLink({ icon: Icon, isTelegram, ...props }) {
 
 function IM() {
   return (
-    <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl w-full h-10">
+    <h2 className="text-2xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
       <Typewriter
         words={["I'm a Software Engineer", "I build web applications", "I solve problems with code"]}
         typeSpeed={50}
@@ -52,7 +52,7 @@ export default function Home({ articles }) {
           become a very strong programmer."
         />
       </Head>
-      <Container className="mt-[10vh]">
+      <Container className="translate-y-[111%]">
         <div className="max-w-2xl">
           <IM></IM>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
