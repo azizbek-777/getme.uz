@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useState, useEffect } from 'react'
 import { Typewriter } from 'react-simple-typewriter'
-import { IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandLinkedinFilled, IconBrandTelegram, } from '@tabler/icons-react'
+import { IconBrandGit, IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandJavascript, IconBrandLinkedinFilled, IconBrandMongodb, IconBrandNodejs, IconBrandTelegram, IconBrandUbuntu, IconFileTypePhp, IconGitBranch, IconSql, } from '@tabler/icons-react'
 
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
@@ -52,7 +52,7 @@ export default function Home({ articles }) {
           become a very strong programmer."
         />
       </Head>
-      <Container className="translate-y-[100%]">
+      <Container className="translate-y-[50%]">
         <div className="max-w-2xl">
           <IM></IM>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
@@ -84,7 +84,41 @@ export default function Home({ articles }) {
             />
           </div>
         </div>
+
         {/* Download CV Button */}
+        <div class="mt-10">
+          <h2 class="text-3xl font-bold mb-4">Skills and Tools</h2>
+          <div class="flex flex-wrap gap-4 pt-2">
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconBrandJavascript alt="nodejs" class="w-6 h-6" />
+              <span>JavaScript</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconBrandNodejs alt="nodejs" class="w-6 h-6" />
+              <span>Node.js</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconFileTypePhp alt="php" class="w-6 h-6" />
+              <span>PHP</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconSql alt="sql" class="w-6 h-6" />
+              <span>PostgreSQL</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconBrandMongodb alt="MongoDB" class="w-6 h-6" />
+              <span>MongoDB</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconBrandUbuntu alt="Linux" class="w-6 h-6" />
+              <span>Linux</span>
+            </div>
+            <div class="px-4 py-2 border border-gray-500 rounded-3xl flex items-center gap-2 transition transform hover:bg-gray-700 hover:border-gray-300 hover:scale-105">
+              <IconBrandGit alt="Git" class="w-6 h-6" />
+              <span>Git</span>
+            </div>
+          </div>
+        </div>
       </Container >
       {/* <Container>
         <Jobs title='Education' data={dataEducation} />
