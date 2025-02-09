@@ -80,7 +80,7 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full border-[0.1px] border-green-500 px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-green-500/20 dark:bg-dark-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full border-[0.1px] border-green-800 px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-green-800/20 dark:bg-dark-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
 
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
@@ -157,7 +157,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full border-[0.1px] border-green-500 shadow-sm shadow-green-500/20 dark:border-green-500 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20">
+      <ul className="flex rounded-full border-[0.1px] border-green-800 shadow-sm shadow-green-800/20 dark:border-green-800 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20">
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Blog</NavItem>
@@ -195,7 +195,7 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group px-2 py-2 rounded-full border-[0.1px] shadow-sm shadow-green-500/20 border-green-500 dark:border-green-500 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group px-2 py-2 rounded-full border-[0.1px] shadow-sm shadow-green-800/20 border-green-800 dark:border-green-800 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-800 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden" />
