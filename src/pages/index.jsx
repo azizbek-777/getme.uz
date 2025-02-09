@@ -82,7 +82,7 @@ export default function Home({ articles }) {
         </div>
 
         <div className="mt-10">
-          <h2 className="text-3xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">Skills and Tools</h2>
+          <h2 className="text-3xl font-bold mb-4 text-zinc-800 dark:text-zinc-100">Skills and Tools && test</h2>
           <div className="flex flex-wrap gap-4 pt-2">
             {skills.map(({ icon: Icon, name, color }, index) => (
               <div
