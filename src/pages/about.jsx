@@ -43,9 +43,9 @@ function SocialLink({ className, href, children, icon: Icon }) {
     <li className={clsx(className, 'flex')}>
       <Link
         href={href}
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-500"
+        className="group flex text-sm font-medium text-zinc-800 transition hover:text-zinc-500 dark:text-zinc-200 dark:hover:text-zinc-500"
       >
-        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-teal-500" />
+        <Icon className="h-6 w-6 flex-none fill-zinc-500 transition group-hover:fill-zinc-500" />
         <span className="ml-4">{children}</span>
       </Link>
     </li>
@@ -141,15 +141,25 @@ export default function About() {
                 sizes="(min-width: 1024px) 32rem, 20rem"
                 className="aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
               />
-              <Button
-                href="./CV_Azizbek.pdf"
-                variant="secondary"
-                className="border mt-2 w-full dark:border-zinc-900 rounded-xs"
-              >
-                Download CV
-                <ArrowDownIcon
-                  className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 ew:group-active:stroke-zinc-50" />
-              </Button>
+              <div>
+                <SocialLink
+                  href="mailto:contact@getme.uz"
+                  icon={MailIcon}
+                  className="mt-2 w-full dark:border-zinc-900 rounded-xs"
+
+                >
+                  contact@getme.uz
+                </SocialLink>
+                <Button
+                  href="./CV_Azizbek.pdf"
+                  variant="secondary"
+                  className="border mt-2 w-full dark:border-zinc-900 rounded-xs"
+                >
+                  Download CV
+                  <ArrowDownIcon
+                    className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 ew:group-active:stroke-zinc-50" />
+                </Button>
+              </div>
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
@@ -164,15 +174,6 @@ export default function About() {
                 Besides studying technology and developing software solutions, I am interested in sports and love to read. I am always open to new experiences!
               </p>
             </div>
-          </div>
-          <div className="lg:pl-20">
-            <SocialLink
-              href="mailto:contact@getme.uz"
-              icon={MailIcon}
-              className="border-t border-zinc-100 pt-8 dark:border-zinc-700/40"
-            >
-              contact@getme.uz
-            </SocialLink>
           </div>
         </div>
         <div className=''>

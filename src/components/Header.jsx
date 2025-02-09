@@ -143,8 +143,8 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-4 py-2 transition-all duration-200 ease-in-out', // smooth transition
           isActive
-            ? 'text-white font-semibold bg-blue-500 rounded-lg shadow-md' // Active state styling
-            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg' // Default and hover styling
+            ? 'text-zinc-900 dark:text-white font-semibold rounded-lg ' // Active state styling
+            : 'text-zinc-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg' // Default and hover styling
         )}
       >
         {children}
@@ -156,7 +156,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-lg bg-white/80 px-4 text-sm font-medium text-gray-700 shadow-sm backdrop-blur-md ring-1 ring-gray-900/5 dark:bg-gray-800/80 dark:text-gray-200 dark:ring-white/10">
+      <ul className="flex rounded-full bg-white/80 px-4 text-sm font-medium text-gray-700 shadow-sm backdrop-blur-md ring-1 ring-gray-900/5 dark:bg-zinc-900 dark:text-zinc-20 dark:ring-white/20">
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Blog</NavItem>
