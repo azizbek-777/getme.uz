@@ -144,7 +144,7 @@ function NavItem({ href, children }) {
           'relative block px-4 py-2 transition-all duration-200 ease-in-out', // smooth transition
           isActive
             ? 'text-zinc-900 dark:text-white font-semibold rounded-lg ' // Active state styling
-            : 'text-zinc-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg' // Default and hover styling
+            : 'text-zinc-400 hover:text-gray-600 hover:bg-gray-200 dark:hover:bg-zinc-800 dark:hover:text-white rounded-lg' // Default and hover styling
         )}
       >
         {children}
