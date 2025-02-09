@@ -80,7 +80,8 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+      <Popover.Button className="group flex items-center rounded-full border-[0.1px] border-green-500 px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-green-500/20 dark:bg-dark-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
@@ -137,14 +138,14 @@ function NavItem({ href, children }) {
   const isActive = router.pathname === href;
 
   return (
-    <li>
+    <li className="group">
       <Link
         href={href}
         className={clsx(
-          'relative block px-4 py-2 transition-all duration-200 ease-in-out', // smooth transition
+          "relative block px-4 py-2 transition-all duration-200 ease-in-out rounded-full",
           isActive
-            ? 'text-zinc-900 dark:text-white font-semibold rounded-lg ' // Active state styling
-            : 'text-zinc-400 hover:text-gray-600 hover:bg-gray-200 dark:hover:bg-zinc-800 dark:hover:text-white rounded-lg' // Default and hover styling
+            ? "text-zinc-900 dark:text-white font-semibold" // Active background qo'shildi
+            : "text-zinc-400 hover:text-gray-900 dark:hover:text-white group-hover:bg-gray-200 dark:group-hover:bg-zinc-800"
         )}
       >
         {children}
@@ -156,7 +157,7 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/80 px-4 text-sm font-medium text-gray-700 shadow-sm backdrop-blur-md ring-1 ring-gray-900/5 dark:bg-zinc-900 dark:text-zinc-20 dark:ring-white/20">
+      <ul className="flex rounded-full border-[0.1px] border-green-500 shadow-sm shadow-green-500/20 dark:border-green-500 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20">
         <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Blog</NavItem>
@@ -165,6 +166,8 @@ function DesktopNavigation(props) {
     </nav>
   );
 }
+
+
 
 function ModeToggle() {
   function disableTransitionsTemporarily() {
@@ -192,7 +195,7 @@ function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group px-2 py-2 rounded-full border-[0.1px] shadow-sm shadow-green-500/20 border-green-500 dark:border-green-500 transition dark:bg-dark-800/90 dark:ring-white/10 dark:hover:ring-white/20"
       onClick={toggleMode}
     >
       <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-800 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden" />
@@ -231,11 +234,13 @@ export function Header() {
                   <ModeToggle />
                 </div>
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
+                <div className="pointer-events-auto hidden md:block">
+                  <ModeToggle />
+                </div>
               </div>
 
               <div className="flex justify-end md:flex-1 pointer-events-auto hidden md:block">
                 <div className="pointer-events-auto">
-                  <ModeToggle />
                 </div>
               </div>
             </div>
