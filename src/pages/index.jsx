@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
-import { IconBrandGit, IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandJavascript, IconBrandLinkedinFilled, IconBrandMongodb, IconBrandNodejs, IconBrandTelegram, IconBrandUbuntu, IconFileTypePhp, IconGitBranch, IconSql, } from '@tabler/icons-react'
+import { IconBrandDocker, IconBrandGit, IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandJavascript, IconBrandLinkedinFilled, IconBrandMongodb, IconBrandNodejs, IconBrandTelegram, IconBrandTypescript, IconBrandUbuntu, IconFileTypePhp, IconSql } from '@tabler/icons-react'
 
 import { Container } from '@/components/Container'
 import { generateRssFeed } from '@/lib/generateRssFeed'
@@ -87,12 +87,14 @@ export default function Home({ articles }) {
           <div className="flex flex-wrap gap-4 pt-2">
             {[
               { icon: IconBrandJavascript, name: "JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
+              { icon: IconBrandTypescript, name: "TypeScript", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
               { icon: IconBrandNodejs, name: "Node.js", color: "text-green-600 dark:text-green-400", hover: "hover:bg-green-100 dark:hover:bg-green-900" },
               { icon: IconFileTypePhp, name: "PHP", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
               { icon: IconSql, name: "PostgreSQL", color: "text-blue-500 dark:text-blue-300", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
               { icon: IconBrandMongodb, name: "MongoDB", color: "text-green-500 dark:text-green-300", hover: "hover:bg-green-100 dark:hover:bg-green-900" },
               { icon: IconBrandUbuntu, name: "Linux", color: "text-orange-600 dark:text-orange-400", hover: "hover:bg-orange-100 dark:hover:bg-orange-900" },
               { icon: IconBrandGit, name: "Git", color: "text-red-500 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
+              { icon: IconBrandDocker, name: "Docker", color: "text-cyan-600 dark:text-cyan-400", hover: "hover:bg-cyan-100 dark:hover:bg-cyan-900" },
             ].map(({ icon: Icon, name, color, hover }, index) => (
               <div
                 key={index}
