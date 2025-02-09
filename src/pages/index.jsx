@@ -47,7 +47,7 @@ export default function Home({ articles }) {
           become a very strong programmer."
         />
       </Head>
-      <Container className="mt-40">
+      <Container className="mt-16 sm:mt-32">
         <div className="max-w-2xl">
           <IM></IM>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
