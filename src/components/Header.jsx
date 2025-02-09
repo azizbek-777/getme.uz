@@ -4,8 +4,7 @@ import { Popover, Transition } from '@headlessui/react'
 import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
-import { Fragment, useEffect, useRef } from 'react'
-import { IconHome } from '@tabler/icons-react'
+import { Fragment, useRef } from 'react'
 
 function CloseIcon(props) {
   return (
@@ -120,6 +119,7 @@ function MobileNavigation(props) {
             </div>
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                <MobileNavItem href="/">Home</MobileNavItem>
                 <MobileNavItem href="/about">About</MobileNavItem>
                 <MobileNavItem href="/articles">Blog</MobileNavItem>
                 <MobileNavItem href="/projects">Projects</MobileNavItem>
@@ -141,10 +141,10 @@ function NavItem({ href, children }) {
       <Link
         href={href}
         className={clsx(
-          'relative block px-3 py-2 transition',
+          'relative block px-4 py-2 transition-all duration-200 ease-in-out', // smooth transition
           isActive
-            ? 'text-zinc-800 dark:text-zinc-100 font-semibold'
-            : 'text-zinc-800 dark:text-zinc-100 hover:text-zinc-100 dark:text-zinc-500 dark:hover:text-zinc-300'
+            ? 'text-white font-semibold bg-blue-500 rounded-lg shadow-md' // Active state styling
+            : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-lg' // Default and hover styling
         )}
       >
         {children}
@@ -156,13 +156,14 @@ function NavItem({ href, children }) {
 function DesktopNavigation(props) {
   return (
     <nav {...props}>
-      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+      <ul className="flex rounded-lg bg-white/80 px-4 text-sm font-medium text-gray-700 shadow-sm backdrop-blur-md ring-1 ring-gray-900/5 dark:bg-gray-800/80 dark:text-gray-200 dark:ring-white/10">
+        <NavItem href="/">Home</NavItem>
         <NavItem href="/about">About</NavItem>
         <NavItem href="/articles">Blog</NavItem>
         <NavItem href="/projects">Projects</NavItem>
       </ul>
     </nav>
-  )
+  );
 }
 
 function ModeToggle() {
@@ -200,136 +201,10 @@ function ModeToggle() {
   )
 }
 
-function clamp(number, a, b) {
-  let min = Math.min(a, b)
-  let max = Math.max(a, b)
-  return Math.min(Math.max(number, min), max)
-}
-
-function Avatar({ large = false, className, ...props }) {
-
-  return (
-    <Link
-      href="/"
-      aria-label="Home"
-      className={clsx(className, 'pointer-events-auto')}
-      {...props}
-    >
-      <button
-        type="button"
-        aria-label="Home"
-        className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
-      >
-        <IconHome className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-teal-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-teal-500" />
-        <IconHome className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden"
-        />
-      </button>
-    </Link>
-  )
-}
-
 export function Header() {
   let isHomePage = useRouter().pathname === '/'
 
   let headerRef = useRef()
-  let avatarRef = useRef()
-  let isInitial = useRef(true)
-
-  useEffect(() => {
-    let downDelay = avatarRef.current?.offsetTop ?? 0
-    let upDelay = 64
-
-    function setProperty(property, value) {
-      document.documentElement.style.setProperty(property, value)
-    }
-
-    function removeProperty(property) {
-      document.documentElement.style.removeProperty(property)
-    }
-
-    function updateHeaderStyles() {
-      let { top, height } = headerRef.current.getBoundingClientRect()
-      let scrollY = clamp(
-        window.scrollY,
-        0,
-        document.body.scrollHeight - window.innerHeight
-      )
-
-      if (isInitial.current) {
-        setProperty('--header-position', 'sticky')
-      }
-
-      setProperty('--content-offset', `${downDelay}px`)
-
-      if (isInitial.current || scrollY < downDelay) {
-        setProperty('--header-height', `${downDelay + height}px`)
-        setProperty('--header-mb', `${-downDelay}px`)
-      } else if (top + height < -upDelay) {
-        let offset = Math.max(height, scrollY - upDelay)
-        setProperty('--header-height', `${offset}px`)
-        setProperty('--header-mb', `${height - offset}px`)
-      } else if (top === 0) {
-        setProperty('--header-height', `${scrollY + height}px`)
-        setProperty('--header-mb', `${-scrollY}px`)
-      }
-
-      if (top === 0 && scrollY > 0 && scrollY >= downDelay) {
-        setProperty('--header-inner-position', 'fixed')
-        removeProperty('--header-top')
-        removeProperty('--avatar-top')
-      } else {
-        removeProperty('--header-inner-position')
-        setProperty('--header-top', '0px')
-        setProperty('--avatar-top', '0px')
-      }
-    }
-
-    function updateAvatarStyles() {
-      if (!isHomePage) {
-        return
-      }
-
-      let fromScale = 1
-      let toScale = 36 / 64
-      let fromX = 0
-      let toX = 2 / 16
-
-      let scrollY = downDelay - window.scrollY
-
-      let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale
-      scale = clamp(scale, fromScale, toScale)
-
-      let x = (scrollY * (fromX - toX)) / downDelay + toX
-      x = clamp(x, fromX, toX)
-
-      setProperty(
-        '--avatar-image-transform',
-        `translate3d(${x}rem, 0, 0) scale(${scale})`
-      )
-
-      let borderScale = 1 / (toScale / scale)
-      let borderX = (-toX + x) * borderScale
-      let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`
-
-      setProperty('--avatar-border-transform', borderTransform)
-      setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0)
-    }
-
-    function updateStyles() {
-      updateHeaderStyles()
-      updateAvatarStyles()
-      isInitial.current = false
-    }
-
-    updateStyles()
-    window.addEventListener('scroll', updateStyles, { passive: true })
-    window.addEventListener('resize', updateStyles)
-
-    return () => {
-      window.removeEventListener('scroll', updateStyles, { passive: true })
-      window.removeEventListener('resize', updateStyles)
-    }
-  }, [isHomePage])
 
   return (
     <>
@@ -350,9 +225,6 @@ export function Header() {
             style={{ position: 'var(--header-inner-position)' }}
           >
             <div className="relative flex gap-4">
-              <div className="flex flex-1">
-                <Avatar />
-              </div>
               <div className="flex justify-center w-full">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
