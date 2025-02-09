@@ -143,8 +143,8 @@ function NavItem({ href, children }) {
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
-            ? 'text-zinc-100 font-semibold'
-            : 'text-zinc-400 hover:text-zinc-100 dark:text-zinc-500 dark:hover:text-zinc-300'
+            ? 'text-zinc-800 dark:text-zinc-100 font-semibold'
+            : 'text-zinc-800 dark:text-zinc-100 hover:text-zinc-100 dark:text-zinc-500 dark:hover:text-zinc-300'
         )}
       >
         {children}
