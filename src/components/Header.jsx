@@ -225,12 +225,15 @@ export function Header() {
             style={{ position: 'var(--header-inner-position)' }}
           >
             <div className="relative flex gap-4">
-              <div className="flex justify-center w-full">
+              <div className="flex justify-center w-full gap-1">
                 <MobileNavigation className="pointer-events-auto md:hidden" />
+                <div className="pointer-events-auto md:hidden">
+                  <ModeToggle />
+                </div>
                 <DesktopNavigation className="pointer-events-auto hidden md:block" />
               </div>
 
-              <div className="flex justify-end md:flex-1">
+              <div className="flex justify-end md:flex-1 pointer-events-auto hidden md:block">
                 <div className="pointer-events-auto">
                   <ModeToggle />
                 </div>
