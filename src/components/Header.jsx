@@ -80,8 +80,7 @@ function MobileNavItem({ href, children }) {
 function MobileNavigation(props) {
   return (
     <Popover {...props}>
-      <Popover.Button className="group flex items-center rounded-full border-[1px] border-green-800 px-4 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-green-800/20 dark:bg-dark-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
-
+      <Popover.Button className="group flex items-center rounded-full border-[1px] border-green-800 px-6 py-2 text-sm font-medium text-zinc-800 shadow-sm shadow-green-800/20 dark:bg-dark-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
         Menu
         <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
       </Popover.Button>
