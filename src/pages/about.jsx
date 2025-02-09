@@ -87,8 +87,7 @@ function Jobs({ title = 'Experience', data }) {
         {data.map((job, index) => (
           <div
             key={index}
-            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0
-              transition-transform duration-300 hover:scale-105 focus:scale-105 hover:ring-zinc-300 focus:ring-zinc-300 dark:hover:ring-zinc-600 dark:focus:ring-zinc-600"
+            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0"
             tabIndex={0} // Klaviatura fokusi uchun
           >
             {/* Logo Section */}
@@ -120,6 +119,7 @@ function Jobs({ title = 'Experience', data }) {
     </>
   );
 }
+
 
 export default function About() {
   return (
