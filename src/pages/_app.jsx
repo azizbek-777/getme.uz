@@ -16,16 +16,17 @@ function usePrevious(value) {
 }
 
 export default function App({ Component, pageProps, router }) {
-  let previousPathname = usePrevious(router.pathname)
+  let previousPathname = usePrevious(router.pathname);
 
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <main className="mx-auto max-w-4xl flex-grow">
+      <main className="flex-grow mx-auto max-w-4xl">
         <Component previousPathname={previousPathname} {...pageProps} />
       </main>
       <Footer />
-    </div>
-  )
+    </div>  
+  );
 }
+
 
