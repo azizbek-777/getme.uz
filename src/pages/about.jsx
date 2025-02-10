@@ -9,6 +9,7 @@ import { Button } from '@/components/Button'
 import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
 import logoUzinfocom from '@/images/logos/logo_uzinfocom.jpg'
 import logoKarsu from '@/images/logos/logo_karsu.png'
+import { useState } from 'react'
 
 const data = [
   {
@@ -75,7 +76,8 @@ function ArrowDownIcon(props) {
     </svg>
   )
 }
-function Jobs({ title = 'Experience', data }) {
+
+function Jobs({ title = "Experience", data }) {
   return (
     <>
       <h2 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-2xl mt-10">
@@ -85,41 +87,60 @@ function Jobs({ title = 'Experience', data }) {
       {/* Job Cards */}
       <div className="space-y-6 mt-4">
         {data.map((job, index) => (
-          <div
-            key={index}
-            className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0"
-            tabIndex={0} // Klaviatura fokusi uchun
-          >
-            {/* Logo Section */}
-            <div
-              className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
-            >
-              <Image
-                src={job.logo}
-                alt={`${job.name} logo`}
-                className="h-12 w-12 rounded-full"
-                unoptimized
-              />
-            </div>
-
-            {/* Details Section */}
-            <div>
-              <h3 className="text-lg dark:text-zinc-100 font-semibold">
-                {job.name}{' '}
-                <span className="text-sm text-zinc-700 dark:text-zinc-400">
-                  {job.date}
-                </span>
-              </h3>
-              <p className="text-sm text-zinc-700 dark:text-zinc-400">{job.position}</p>
-              <p className="text-sm dark:text-zinc-200 mt-2">{job.description}</p>
-            </div>
-          </div>
+          <JobCard key={index} job={job} />
         ))}
       </div>
     </>
   );
 }
 
+function JobCard({ job }) {
+  const [expanded, setExpanded] = useState(false);
+
+  return (
+    <div
+      className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0"
+      tabIndex={0} // Klaviatura fokusi uchun
+    >
+      {/* Logo Section */}
+      <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+        <Image
+          src={job.logo}
+          alt={`${job.name} logo`}
+          className="h-12 w-12 rounded-full"
+          unoptimized
+        />
+      </div>
+
+      {/* Details Section */}
+      <div>
+        <h3 className="text-lg dark:text-zinc-100 font-semibold">
+          {job.name}{" "}
+          <span className="text-sm text-zinc-700 dark:text-zinc-400">
+            {job.date}
+          </span>
+        </h3>
+        <p className="text-sm text-zinc-700 dark:text-zinc-400">
+          {job.position}
+        </p>
+        <p
+          className={`text-sm dark:text-zinc-200 mt-2 ${expanded ? "" : "line-clamp-2"
+            }`}
+        >
+          {job.description}
+        </p>
+        {!expanded && (
+          <button
+            className="text-sm text-blue-500"
+            onClick={() => setExpanded(true)}
+          >
+            See more...
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function About() {
   return (
