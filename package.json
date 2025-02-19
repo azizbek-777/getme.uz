@@ -10,6 +10,7 @@
   },
   "browserslist": "defaults, not ie <= 11",
   "dependencies": {
+    "@vercel/speed-insights": "^latest",
     "@headlessui/react": "^1.7.19",
     "@mapbox/rehype-prism": "^0.8.0",
     "@mdx-js/loader": "^2.1.2",
