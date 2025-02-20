@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import { IconBrandDocker, IconBrandGit, IconBrandGithubFilled, IconBrandInstagramFilled, IconBrandJavascript, IconBrandLinkedinFilled, IconBrandMongodb, IconBrandNodejs, IconBrandTelegram, IconBrandTypescript, IconBrandUbuntu, IconFileTypePhp, IconSql } from '@tabler/icons-react'
+import { FaBeer } from 'react-icons/fa';
 
 import { Container } from '@/components/Container'
 import { generateRssFeed } from '@/lib/generateRssFeed'

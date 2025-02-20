@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import { SpeedInsights } from "@vercel/speed-insights";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 import { Footer } from '@/components/Footer'
