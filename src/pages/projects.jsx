@@ -46,7 +46,7 @@ const PozdravCard = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
       {cardData.map((card) => (
-        <div key={card.id} className="w-[362px] rounded-xl overflow-hidden shadow-lg"> {/* Card o'lchamini kichikroq qildik */}
+        <div key={card.id} className="w-[362px] rounded-xl overflow-hidden shadow-md shadow-black-500/50">
           <div className="w-full h-[160px]">
             <Image
               src={card.image}
