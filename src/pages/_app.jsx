@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 
 import { Footer } from '@/components/Footer'
@@ -25,7 +24,6 @@ export default function App({ Component, pageProps, router }) {
       <Header />
       <main className="flex-grow mx-auto max-w-4xl">
         <Component previousPathname={previousPathname} {...pageProps} />
-        <SpeedInsights />
       </main>
       <Footer />
     </div>
