@@ -1,30 +1,98 @@
 import Image from 'next/future/image'
 import Head from 'next/head'
 
-import { Card } from '@/components/Card'
-import { SimpleLayout } from '@/components/SimpleLayout'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import {
+  FaJs,
+  FaNodeJs,
+} from 'react-icons/fa'
 
-const projects = [
+import {
+  SiTypescript,
+  SiNestjs,
+  SiExpress,
+} from 'react-icons/si'
+
+import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
+
+
+const cardData = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    id: 1,
+    title: "The Pozdrav",
+    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
+    image: logoTexnopos,
+    link: "#"
   },
-]
 
-function LinkIcon(props) {
+  {
+    id: 1,
+    title: "The Pozdrav",
+    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
+    image: logoTexnopos,
+    link: "#"
+  },
+
+  {
+    id: 1,
+    title: "The Pozdrav",
+    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
+    image: logoTexnopos,
+    link: "#"
+  },
+
+];
+
+const PozdravCard = () => {
   return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        d="M15.712 11.823a.75.75 0 1 0 1.06 1.06l-1.06-1.06Zm-4.95 1.768a.75.75 0 0 0 1.06-1.06l-1.06 1.06Zm-2.475-1.414a.75.75 0 1 0-1.06-1.06l1.06 1.06Zm4.95-1.768a.75.75 0 1 0-1.06 1.06l1.06-1.06Zm3.359.53-.884.884 1.06 1.06.885-.883-1.061-1.06Zm-4.95-2.12 1.414-1.415L12 6.344l-1.415 1.413 1.061 1.061Zm0 3.535a2.5 2.5 0 0 1 0-3.536l-1.06-1.06a4 4 0 0 0 0 5.656l1.06-1.06Zm4.95-4.95a2.5 2.5 0 0 1 0 3.535L17.656 12a4 4 0 0 0 0-5.657l-1.06 1.06Zm1.06-1.06a4 4 0 0 0-5.656 0l1.06 1.06a2.5 2.5 0 0 1 3.536 0l1.06-1.06Zm-7.07 7.07.176.177 1.06-1.06-.176-.177-1.06 1.06Zm-3.183-.353.884-.884-1.06-1.06-.884.883 1.06 1.06Zm4.95 2.121-1.414 1.414 1.06 1.06 1.415-1.413-1.06-1.061Zm0-3.536a2.5 2.5 0 0 1 0 3.536l1.06 1.06a4 4 0 0 0 0-5.656l-1.06 1.06Zm-4.95 4.95a2.5 2.5 0 0 1 0-3.535L6.344 12a4 4 0 0 0 0 5.656l1.06-1.06Zm-1.06 1.06a4 4 0 0 0 5.657 0l-1.061-1.06a2.5 2.5 0 0 1-3.535 0l-1.061 1.06Zm7.07-7.07-.176-.177-1.06 1.06.176.178 1.06-1.061Z"
-        fill="currentColor"
-      />
-    </svg>
-  )
-}
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
+      {cardData.map((card) => (
+        <div key={card.id} className="w-[362px] rounded-xl overflow-hidden shadow-lg"> {/* Card o'lchamini kichikroq qildik */}
+          <div className="w-full h-[160px]">
+            <Image
+              src={card.image}
+              alt={card.title}
+              width={280}
+              height={160}
+              className="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div className='p-[20px]'>
+            <div>
+              <p className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
+                {card.title}
+              </p>
+              <p className="text-zinc-600 dark:text-zinc-400">
+                {card.description}
+              </p>
+            </div>
+            <div className="mt-6 flex flex-wrap gap-2">
+              {[
+                { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
+                { icon: SiTypescript, name: "TypeScript", url: "https://www.typescriptlang.org", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
+                { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org", color: "text-green-600 dark:text-green-400", hover: "hover:bg-green-100 dark:hover:bg-green-900" },
+                { icon: SiNestjs, name: "NestJS", url: "https://nestjs.com", color: "text-red-600 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
+                { icon: SiExpress, name: "ExpressJS", url: "https://expressjs.com", color: "text-gray-600 dark:text-gray-400", hover: "hover:bg-gray-100 dark:hover:bg-gray-900" },
+              ].map(({ icon: Icon, name, url, color, hover }, index) => (
+                <a
+                  key={index}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`px-1 py-1 border border-gray-500 rounded-3xl flex items-center gap-1 transition transform 
+                      ${hover} hover:border-transparent hover:scale-105`}
+                >
+                  <Icon className={`w-4 h-4 ${color}`} />
+                  <span className="font-medium text-zinc-600 dark:text-zinc-400">{name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default function Projects() {
   return (
@@ -36,36 +104,7 @@ export default function Projects() {
           content="Projects"
         />
       </Head>
-      <SimpleLayout
-        title="Projects"
-        intro="Hello World"
-      >
-        {/* <ul
-          role="list"
-          className="grid grid-cols-1 gap-x-12 gap-y-16 sm:grid-cols-2 lg:grid-cols-3"
-        >
-          {projects.map((project) => (
-            <Card as="li" key={project.name}>
-              <div className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                <Image
-                  src={project.logo}
-                  alt=""
-                  className="h-8 w-8"
-                  unoptimized
-                />
-              </div>
-              <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-                <Card.Link href={project.link.href}>{project.name}</Card.Link>
-              </h2>
-              <Card.Description>{project.description}</Card.Description>
-              <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">
-                <LinkIcon className="h-6 w-6 flex-none" />
-                <span className="ml-2">{project.link.label}</span>
-              </p>
-            </Card>
-          ))}
-        </ul> */}
-      </SimpleLayout>
+      <PozdravCard />
     </>
   )
 }
