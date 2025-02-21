@@ -50,7 +50,7 @@ const PozdravCard = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
       {cardData.map((card) => (
         <div key={card.id}
-          className="w-[362px] rounded-2xl overflow-hidden border dark:border dark:border-zinc-800">
+          className="w-[362px] rounded-xl overflow-hidden border dark:border dark:border-zinc-800">
           <div className="w-full h-[160px] overflow-hidden">
             <Image
               src={card.image}
@@ -62,15 +62,14 @@ const PozdravCard = () => {
             />
           </div>
           <div className='p-[20px]'>
-
             <div>
               <div className="flex items-center justify-between">
                 <p className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {card.title}
                 </p>
                 <GoArrowUpRight
-                  className="text-[#7D7D7D] text-2xl border border-[#7D7D7D] dark:border-white rounded-md 
-                          hover:text-white hover:bg-black hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white 
+                  className="text-[#7D7D7D] text-2xl border border-[#7D7D7D] dark:text-zinc-400 rounded-md 
+                          hover:text-white hover:bg-black hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white
                           transition-colors duration-300 cursor-pointer"
                 />
 
@@ -79,7 +78,7 @@ const PozdravCard = () => {
                 {card.description}
               </p>
             </div>
-            <div className="mt-6 flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {[
                 { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
                 { icon: SiTypescript, name: "TypeScript", url: "https://www.typescriptlang.org", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
