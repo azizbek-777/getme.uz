@@ -99,11 +99,11 @@ function JobCard({ job }) {
 
   return (
     <div
-      className="flex flex-col sm:flex-row sm:items-center border dark:border-zinc-700/40 rounded-2xl p-4 gap-4 max-w-2xl shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-900 dark:ring-0"
+      className="flex flex-col sm:flex-row sm:items-center border-[1px] border-zinc-800 dark:border-zinc-800 rounded-2xl p-2 gap-4"
       tabIndex={0} // Klaviatura fokusi uchun
     >
       {/* Logo Section */}
-      <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+      <div className="relative flex h-16 w-16 flex-none items-center justify-center rounded-full ring-zinc-900/5 border-[1px] border-zinc-800">
         <Image
           src={job.logo}
           alt={`${job.name} logo`}
@@ -124,14 +124,14 @@ function JobCard({ job }) {
           {job.position}
         </p>
         <p
-          className={`text-sm dark:text-zinc-200 mt-2 ${expanded ? "" : "line-clamp-2"
+          className={`text-sm dark:text-zinc-200 ${expanded ? "" : "line-clamp-2"
             }`}
         >
           {job.description}
         </p>
         {!expanded && (
           <button
-            className="text-sm text-blue-500"
+            className="text-sm text-zinc-700 dark:text-zinc-400"
             onClick={() => setExpanded(true)}
           >
             See more...
@@ -155,18 +155,18 @@ export default function About() {
         </h1>
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
-            <div className="max-w-xs px-2.5 lg:max-w-none">
+            <div className="max-w-xs px-2.5">
               <Image
                 src={portraitImage}
-                alt=""
+                alt="logo"
                 sizes="(min-width: 1024px) 32rem, 20rem"
-                className="aspect-square rounded-xl bg-zinc-100 object-cover dark:bg-zinc-800"
+                className="rounded-xl border-[1px] border-zinc-800 dark:border-zinc-800 "
               />
               <div>
                 <SocialLink
                   href="mailto:contact@getme.uz"
                   icon={MailIcon}
-                  className="mt-2 w-full dark:border-zinc-900 rounded-xs"
+                  className="mt-2 w-full rounded-xs"
 
                 >
                   contact@getme.uz
@@ -174,7 +174,7 @@ export default function About() {
                 <Button
                   href="./CV_Azizbek.pdf"
                   variant="secondary"
-                  className="border mt-2 w-full dark:border-zinc-900 rounded-xs"
+                  className="border-[1px] border-zinc-800 dark:border-zinc-800 mt-2 w-full rounded-xs"
                 >
                   Download CV
                   <ArrowDownIcon

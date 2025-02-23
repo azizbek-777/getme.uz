@@ -55,7 +55,7 @@ const PozdravCard = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
       {cardData.map((card) => (
         <div key={card.id}
-          className="w-[362px] rounded-xl overflow-hidden border dark:border dark:border-zinc-800">
+          className="w-[362px] rounded-xl overflow-hidden border border-zinc-800 dark:border-zinc-800">
           <div className="w-full h-[160px] overflow-hidden">
             <Image
               src={card.image}
