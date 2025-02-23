@@ -8,41 +8,46 @@ import {
 
 import {
   SiTypescript,
-  SiNestjs,
-  SiExpress,
+  SiPostgresql,
+  SiPython,
+  SiTelegram,
+  SiApachedolphinscheduler,
+  SiNpm
 } from 'react-icons/si'
 
 import { GoArrowUpRight } from "react-icons/go";
 
 
-import logoTexnopos from '@/images/logos/logo_texnopos.jpg'
+import logoNPM from '@/images/logos/npm.png'
+import logoThepozdrav from '@/images/logos/thepozdrav.png'
 
 
 const cardData = [
   {
     id: 1,
-    title: "The Pozdrav",
-    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
-    image: logoTexnopos,
-    link: "#"
+    title: "KAALIN",
+    description: "JavaScript string methods are mainly for English, making them less suited for Karakalpak. This library provides functions tailored for Karakalpak language needs.",
+    image: logoNPM,
+    link: "https://www.npmjs.com/package/kaalin",
+    stacks: [
+      { icon: SiNpm, name: "NPM", url: "https://www.npmjs.com", color: "text-red-500 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
+      { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
+      { icon: SiTypescript, name: "TypeScript", url: "https://www.typescriptlang.org", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
+      { icon: FaNodeJs, name: "NodeJS", url: "https://nodejs.org", color: "text-green-500 dark:text-green-400", hover: "hover:bg-green-100 dark:hover:bg-green-900" }
+    ]
   },
-
   {
-    id: 1,
-    title: "The Pozdrav",
-    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
-    image: logoTexnopos,
-    link: "#"
+    id: 2,
+    title: "ThePozdravBot",
+    description: "This bot reminds you of birthdays! 🎉 Add yours with /start, and it’ll notify you and the group. 🎂 Join 4100+ users & 400+ groups!",
+    image: logoThepozdrav,
+    link: "https://t.me/ThePozdravBot",
+    stacks: [
+      { icon: SiPython, name: "Python", url: "https://www.python.org", color: "text-blue-500 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
+      { icon: SiPostgresql, name: "PostgreSQL", url: "https://www.postgresql.org", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
+      { icon: SiTelegram, name: "Telegram", url: "https://telegram.org", color: "text-blue-400 dark:text-blue-300", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
+    ]
   },
-
-  {
-    id: 1,
-    title: "The Pozdrav",
-    description: "Бот собирает дни рождения участников и автоматически поздравляет их в чате.",
-    image: logoTexnopos,
-    link: "#"
-  },
-
 ];
 
 const PozdravCard = () => {
@@ -67,24 +72,20 @@ const PozdravCard = () => {
                 <p className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {card.title}
                 </p>
-                <GoArrowUpRight
-                  className="text-[#7D7D7D] text-2xl border border-[#7D7D7D] dark:text-zinc-400 rounded-md 
+                <a href={card.link} target="_blank" rel="noopener noreferrer">
+                  <GoArrowUpRight
+                    className="text-[#7D7D7D] text-2xl border border-[#7D7D7D] dark:text-zinc-400 rounded-md 
                           hover:text-white hover:bg-black hover:border-black dark:hover:bg-white dark:hover:text-black dark:hover:border-white
                           transition-colors duration-300 cursor-pointer"
-                />
-
+                  />
+                </a>
               </div>
-              <p className="text-zinc-600 dark:text-zinc-400">
+              <p className="text-zinc-600 dark:text-zinc-400 h-[100px] overflow-hidden">
                 {card.description}
               </p>
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
-              {[
-                { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
-                { icon: SiTypescript, name: "TypeScript", url: "https://www.typescriptlang.org", color: "text-blue-600 dark:text-blue-400", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
-                { icon: FaNodeJs, name: "Node.js", url: "https://nodejs.org", color: "text-green-600 dark:text-green-400", hover: "hover:bg-green-100 dark:hover:bg-green-900" },
-                { icon: SiNestjs, name: "NestJS", url: "https://nestjs.com", color: "text-red-600 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
-              ].map(({ icon: Icon, name, url, color, hover }, index) => (
+              {card.stacks?.map(({ icon: Icon, name, url, color, hover }, index) => (
                 <a
                   key={index}
                   href={url}
