@@ -26,7 +26,7 @@ const cardData = [
   {
     id: 1,
     title: "KAALIN",
-    description: "JavaScript string methods are mainly for English, making them less suited for Karakalpak. This library provides functions tailored for Karakalpak language needs.",
+    description: "JavaScript string methods are native to English, not Karakalpak. This solution library fills the gap with 1K+ downloads per week.",
     image: logoNPM,
     link: "https://www.npmjs.com/package/kaalin",
     stacks: [
