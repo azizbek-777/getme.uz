@@ -20,6 +20,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 import logoNPM from '@/images/logos/npm.png'
 import logoThepozdrav from '@/images/logos/thepozdrav.png'
+import logoGetme from '@/images/logos/getme.png'
 
 
 const cardData = [
@@ -27,7 +28,7 @@ const cardData = [
     id: 1,
     title: "KAALIN",
     description: "JavaScript string methods are native to English, not Karakalpak. This solution library fills the gap with 1K+ downloads per week.",
-    image: logoNPM,
+    image: logoGetme,
     link: "https://www.npmjs.com/package/kaalin",
     stacks: [
       { icon: SiNpm, name: "NPM", url: "https://www.npmjs.com", color: "text-red-500 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
@@ -55,18 +56,16 @@ const PozdravCard = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
       {cardData.map((card) => (
         <div key={card.id}
-          className="w-[362px] rounded-xl overflow-hidden border border-zinc-800 dark:border-zinc-800">
-          <div className="w-full h-[160px] overflow-hidden">
+          className="w-[362px] rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
+          <div className="w-full h-44 overflow-hidden border-b border-zinc-800 dark:border-zinc-800">
             <Image
               src={card.image}
               alt={card.title}
-              width={280}
-              height={160}
               className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
               loading="lazy"
             />
           </div>
-          <div className='p-[20px]'>
+          <div className='p-[18px]'>
             <div>
               <div className="flex items-center justify-between">
                 <p className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -80,11 +79,11 @@ const PozdravCard = () => {
                   />
                 </a>
               </div>
-              <p className="text-zinc-600 dark:text-zinc-400 h-[100px] overflow-hidden">
+              <p className="text-zinc-600 dark:text-zinc-400 h-[90px] overflow-hidden">
                 {card.description}
               </p>
             </div>
-            <div className="mt-4 flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2">
               {card.stacks?.map(({ icon: Icon, name, url, color, hover }, index) => (
                 <a
                   key={index}

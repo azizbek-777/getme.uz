@@ -99,7 +99,7 @@ function JobCard({ job }) {
 
   return (
     <div
-      className="flex flex-col sm:flex-row sm:items-center border-[1px] border-zinc-800 dark:border-zinc-800 rounded-2xl p-2 gap-4"
+      className="flex flex-col sm:flex-row sm:items-center border-[1px] border-zinc-800 dark:border-zinc-800 rounded-2xl p-2 gap-4 shadow-sm shadow-zinc-800/20"
       tabIndex={0} // Klaviatura fokusi uchun
     >
       {/* Logo Section */}
