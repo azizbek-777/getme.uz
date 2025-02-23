@@ -11,8 +11,9 @@ import {
   SiPostgresql,
   SiPython,
   SiTelegram,
-  SiApachedolphinscheduler,
-  SiNpm
+  SiVercel,
+  SiNpm,
+  SiNextdotjs
 } from 'react-icons/si'
 
 import { GoArrowUpRight } from "react-icons/go";
@@ -28,7 +29,7 @@ const cardData = [
     id: 1,
     title: "KAALIN",
     description: "JavaScript string methods are native to English, not Karakalpak. This solution library fills the gap with 1K+ downloads per week.",
-    image: logoGetme,
+    image: logoNPM,
     link: "https://www.npmjs.com/package/kaalin",
     stacks: [
       { icon: SiNpm, name: "NPM", url: "https://www.npmjs.com", color: "text-red-500 dark:text-red-400", hover: "hover:bg-red-100 dark:hover:bg-red-900" },
@@ -49,6 +50,18 @@ const cardData = [
       { icon: SiTelegram, name: "Telegram", url: "https://telegram.org", color: "text-blue-400 dark:text-blue-300", hover: "hover:bg-blue-100 dark:hover:bg-blue-900" },
     ]
   },
+  {
+    id: 3,
+    title: "GetMe",
+    description: "This is a portfolio website created to showcase my work and experiences. It features a minimalist design and a user-friendly interface.",
+    image: logoGetme,
+    linke: "https://www.getme.uz",
+    stacks: [
+      { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
+      { icon: SiNextdotjs, name: "Next.js", url: "https://nextjs.org", color: "text-black dark:text-white", hover: "hover:bg-black dark:hover:bg-white" },
+      { icon: SiVercel, name: "Vercel", url: "https://vercel.com", color: "text-black dark:text-white", hover: "hover:bg-black dark:hover:bg-white" },
+    ],
+  }
 ];
 
 const PozdravCard = () => {
@@ -83,7 +96,7 @@ const PozdravCard = () => {
                 {card.description}
               </p>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="mt-4 flex flex-wrap gap-2">
               {card.stacks?.map(({ icon: Icon, name, url, color, hover }, index) => (
                 <a
                   key={index}
