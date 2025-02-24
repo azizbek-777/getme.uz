@@ -55,7 +55,7 @@ const cardData = [
     title: "GetMe",
     description: "This is a portfolio website created to showcase my work and experiences. It features a minimalist design and a user-friendly interface.",
     image: logoGetme,
-    linke: "https://www.getme.uz",
+    link: "https://www.getme.uz",
     stacks: [
       { icon: FaJs, name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", color: "text-yellow-500 dark:text-yellow-400", hover: "hover:bg-yellow-100 dark:hover:bg-yellow-900" },
       { icon: SiNextdotjs, name: "Next.js", url: "https://nextjs.org", color: "text-black dark:text-white", hover: "hover:bg-black dark:hover:bg-white" },
