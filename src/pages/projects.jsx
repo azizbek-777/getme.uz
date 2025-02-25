@@ -70,11 +70,11 @@ const PozdravCard = () => {
       {cardData.map((card) => (
         <div key={card.id}
           className="rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
-          <div className="w-full h-44 overflow-hidden border-b border-zinc-800 dark:border-zinc-800">
+          <div className="overflow-hidden border-b border-zinc-800 dark:border-zinc-800 position-relative h-[200px]">
             <Image
               src={card.image}
               alt={card.title}
-              className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-110"
+              fill={true}
               loading="lazy"
             />
           </div>
