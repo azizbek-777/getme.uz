@@ -66,14 +66,15 @@ const cardData = [
 
 const PozdravCard = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center px-5 sm:px-10">
       {cardData.map((card) => (
         <div key={card.id}
           className="rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
-          <div className="overflow-hidden border-b border-zinc-800 dark:border-zinc-800 position-relative h-[200px]">
+          <div className="overflow-hidden border-b border-zinc-800 dark:border-zinc-800 relative h-[200px]">
             <Image
               src={card.image}
               alt={card.title}
+              className="object-cover"
               fill={true}
               loading="lazy"
             />
