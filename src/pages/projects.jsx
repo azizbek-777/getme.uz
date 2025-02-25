@@ -69,7 +69,7 @@ const PozdravCard = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center">
       {cardData.map((card) => (
         <div key={card.id}
-          className="w-[362px] rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
+          className="rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
           <div className="w-full h-44 overflow-hidden border-b border-zinc-800 dark:border-zinc-800">
             <Image
               src={card.image}
@@ -104,7 +104,7 @@ const PozdravCard = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`px-1 py-1 border border-gray-500 rounded-3xl flex items-center gap-1 transition transform 
-                      ${hover} hover:border-transparent hover:scale-105`}
+                      ${hover} hover:border-transparent`}
                 >
                   <Icon className={`w-3 ${color}`} />
                   <span className="font-medium text-[12px] text-zinc-600 dark:text-zinc-400">{name}</span>
