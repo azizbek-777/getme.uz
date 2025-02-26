@@ -14,13 +14,11 @@ function usePrevious(value) {
   return ref.current
 }
 
-// Separated CustomCursor component for better code organization
 function CustomCursor() {
   const cursorRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
-    // Optimization: Use a single function with event type check instead of multiple handlers
     const handleCursorEvents = (e) => {
       if (e.type === 'mousemove') {
         requestAnimationFrame(() => {
@@ -55,7 +53,7 @@ function CustomCursor() {
   return (
     <div
       ref={cursorRef}
-      className="fixed w-8 h-8 border border-zinc-800 dark:border-none rounded-full transition-transform duration-200 ease-out pointer-events-none z-[9999]"
+      className="hidden lg:block fixed w-8 h-8 border border-zinc-800 dark:border-white rounded-full transition-transform duration-50 ease-out pointer-events-none z-[9999]"
     />
   )
 }
