@@ -66,7 +66,7 @@ const cardData = [
 
 const PozdravCard = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center px-5 sm:px-10">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-16 sm:mt-32 w-full justify-center px sm:px-10">
       {cardData.map((card) => (
         <div key={card.id}
           className="rounded-xl overflow-hidden border shadow-sm shadow-zinc-800/20 border-zinc-800 dark:border-zinc-800">
@@ -74,7 +74,7 @@ const PozdravCard = () => {
             <Image
               src={card.image}
               alt={card.title}
-              className="object-cover"
+              className="object-cover duration-500 hover:scale-110"
               fill={true}
               loading="lazy"
             />
