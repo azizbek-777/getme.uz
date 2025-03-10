@@ -172,7 +172,7 @@ export default function About() {
                   contact@getme.uz
                 </SocialLink>
                 <Button
-                  href="./CV_Azizbek.pdf"
+                  href="./Resume_Berdimuratov_Azizbek.pdf"
                   variant="secondary"
                   className="border-[1px] border-zinc-800 dark:border-zinc-800 mt-2 w-full rounded-xs"
                 >
